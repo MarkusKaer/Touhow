@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
-public class EnemyMovement : MonoBehaviour
+public class EnemyMovement : NetworkBehaviour
 {
     [SerializeField]
     private float moveSpeed;
@@ -20,11 +21,11 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.x > -9f)
+        if (transform.position.x > 7f)
         {
             moveRight = false;
         }
-        else if (transform.position.x < -9f)
+        else if (transform.position.x < -7f)
         {
             moveRight = true;
         }

@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
-public class EnemyBullet : MonoBehaviour
+public class EnemyBullet : NetworkBehaviour
 {
+
+    [SerializeField]
+    private int damage = 20;
 
     private Vector2 moveDirection;
     private float moveSpeed;
@@ -47,8 +51,19 @@ public class EnemyBullet : MonoBehaviour
         CancelInvoke();
     }
 
-
-
+    void OnTriggerEnter2D(Collider2D hitInfo)
+    {
+        Player player = hitInfo.GetComponent<Player>();
+        if (player != null)
+        {
+            player.TakeDamage(damage);
+        }
+        Invoke("Destroy", 3f);
+    }
 
 
 }
+
+
+
+

@@ -31,25 +31,27 @@ public class FireBullets : NetworkBehaviour
         float angleStep = (endAngle - startAngle) / bulletsAmount;
         // her s�tter vi bare vores vinkel til start vinkel som bliver brugt til vores movedirection beregninger
         float angle = startAngle;
-        
+
+        float deg2rad = Mathf.PI / 180f;
 
         //Her bruger vi trigonomitri til at vise bulletsne hvilken retning de skal flyve hen
         for (int i = 0; i < bulletsAmount + 1; i++)
         {
-            float bulDirX = transform.position.x + Mathf.Sin((angle * Mathf.PI) / 180f);
-            float bulDirY = transform.position.y + Mathf.Cos((angle * Mathf.PI) / 180f);
+
+            float bulDirX = transform.position.x + Mathf.Sin(angle * deg2rad);
+            float bulDirY = transform.position.y + Mathf.Cos(angle * deg2rad);
 
             Vector3 bulMoveVector = new Vector3(bulDirX, bulDirY, 0f);
             Vector2 bulDir = (bulMoveVector - transform.position);
 
             GameObject bul = BulletPool.bulletPoolInstance.GetBullet();
-                bul.transform.position = transform.position;
-                bul.transform.rotation = transform.rotation;
-                bul.SetActive(true);
-                bul.GetComponent<EnemyBullet>().SetMoveDirection(bulDir);
+            bul.transform.position = transform.position;
+            bul.transform.rotation = transform.rotation;
+            bul.SetActive(true);
+            bul.GetComponent<EnemyBullet>().SetMoveDirection(bulDir);
 
             angle += angleStep;
-            
+
 
         }
     }

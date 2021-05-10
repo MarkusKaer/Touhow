@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
-public class BulletPool : MonoBehaviour
+public class BulletPool : NetworkBehaviour
 {
 
     public static BulletPool bulletPoolInstance;
@@ -50,7 +51,7 @@ public class BulletPool : MonoBehaviour
         }
 
         //Hvis der ikke er nogen bullets i vores pool, for eksempel når spillet begynder, eller hvis der ikke er flere i hierarkiet betyder det at vi ikke har nok.
-        else if (notEnoughBulletsInPool)
+        if (notEnoughBulletsInPool)
         {
             //Vi instantiater en bullet
             GameObject bul = Instantiate(pooledBullet);

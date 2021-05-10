@@ -7,6 +7,8 @@ public class Bullet : NetworkBehaviour
 {
 
     public float BulletSpeed = 20f;
+    [SerializeField]
+    private int PlayerDamage = 20;
     public Rigidbody2D rb;
 
 
@@ -17,5 +19,16 @@ public class Bullet : NetworkBehaviour
         rb.velocity = transform.up * BulletSpeed;
     }
 
- 
+
+    void OnTriggerEnter2D(Collider2D hitInfo)
+    {
+        Enemy enemy = hitInfo.GetComponent<Enemy>();
+        if (enemy != null)
+        {
+            enemy.TakeDamage(PlayerDamage);
+        }
+        Destroy(gameObject);
+    }
+
+
 }
