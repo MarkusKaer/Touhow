@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
-public class FireBullets : MonoBehaviour
+public class FireBullets : NetworkBehaviour
 {
 
     [SerializeField]
-    //Det her er hvor mange bullets vi gerne vil skyde ud på samme tid
+    //Det her er hvor mange bullets vi gerne vil skyde ud pï¿½ samme tid
     private int bulletsAmount = 10;
 
     [SerializeField]
@@ -17,18 +18,18 @@ public class FireBullets : MonoBehaviour
     private Vector2 bulletMoveDirection;
 
 
-    // I start definerer vi basically vores firerate, så hvert andet sekund skyder vi en bullet ud
+    // I start definerer vi basically vores firerate, sï¿½ hvert andet sekund skyder vi en bullet ud
     void Start()
     {
         InvokeRepeating("Fire", 0f, 2f);
     }
 
-    //Når fjenden skyder
+    //Nï¿½r fjenden skyder
     private void Fire()
     {
-        // Her sørger vi for at bulletsne bliver spredt ud equally
+        // Her sï¿½rger vi for at bulletsne bliver spredt ud equally
         float angleStep = (endAngle - startAngle) / bulletsAmount;
-        // her sætter vi bare vores vinkel til start vinkel som bliver brugt til vores movedirection beregninger
+        // her sï¿½tter vi bare vores vinkel til start vinkel som bliver brugt til vores movedirection beregninger
         float angle = startAngle;
         
 

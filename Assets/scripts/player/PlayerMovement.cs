@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using Mirror;
 
-public class PlayerMovement : MonoBehaviour{
+public class PlayerMovement : NetworkBehaviour{
 
     public float moveSpeed = 5f;
 
@@ -14,6 +15,7 @@ public class PlayerMovement : MonoBehaviour{
     // Update is called once per frame
     void Update()
     {
+        if(!isLocalPlayer) return;
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
     }
