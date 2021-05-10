@@ -299,6 +299,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -0.335
       objectReference: {fileID: 0}
+    - target: {fileID: 5314836060235824381, guid: 77aac035340c56249ae9c9521b5d83d3, type: 3}
+      propertyPath: m_Size.x
+      value: 0.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 5314836060235824381, guid: 77aac035340c56249ae9c9521b5d83d3, type: 3}
+      propertyPath: m_Size.y
+      value: 0.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 5314836060235824381, guid: 77aac035340c56249ae9c9521b5d83d3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -4321618673453446872, guid: 674ef6c53e29fb049835f8c7b5c969b7, type: 3}
+    - target: {fileID: 5314836060235824381, guid: 77aac035340c56249ae9c9521b5d83d3, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5314836060235824382, guid: 77aac035340c56249ae9c9521b5d83d3, type: 3}
       propertyPath: m_Name
       value: Enemy (1)
@@ -347,7 +363,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.66, y: 0.67}
-    newSize: {x: 1, y: 1}
+    newSize: {x: 0.66, y: 0.67}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
