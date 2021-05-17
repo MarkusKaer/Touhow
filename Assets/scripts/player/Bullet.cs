@@ -8,6 +8,7 @@ public class Bullet : NetworkBehaviour
 
     public float BulletSpeed = 20f;
     [SerializeField]
+    [SyncVar]
     private int PlayerDamage = 20;
     public Rigidbody2D rb;
 
