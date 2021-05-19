@@ -23,9 +23,6 @@ public class BulletPool : NetworkBehaviour
         bulletPoolInstance = this;
     }
 
-
-
-
     // Her begynder vi vores bullet liste så vi kn fylde den med bullets
     void Start()
     {

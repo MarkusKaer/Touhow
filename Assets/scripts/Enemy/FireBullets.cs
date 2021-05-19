@@ -5,7 +5,6 @@ using Mirror;
 
 public class FireBullets : NetworkBehaviour
 {
-
     [SerializeField]
     //Det her er hvor mange bullets vi gerne vil skyde ud p� samme tid
     private int bulletsAmount = 10;
@@ -17,11 +16,10 @@ public class FireBullets : NetworkBehaviour
     //styrer bare bullet directionen som er beregnet med trigonomitri
     private Vector2 bulletMoveDirection;
 
-
     // I start definerer vi basically vores firerate, s� hvert andet sekund skyder vi en bullet ud
     void Start()
     {
-        InvokeRepeating("Fire", 1f, 2f);
+        InvokeRepeating("Fire", 0f, 2f);
     }
 
     //N�r fjenden skyder
@@ -37,7 +35,6 @@ public class FireBullets : NetworkBehaviour
         //Her bruger vi trigonomitri til at vise bulletsne hvilken retning de skal flyve hen
         for (int i = 0; i < bulletsAmount + 1; i++)
         {
-
             float bulDirX = transform.position.x + Mathf.Sin(angle * deg2rad);
             float bulDirY = transform.position.y + Mathf.Cos(angle * deg2rad);
 
@@ -51,8 +48,6 @@ public class FireBullets : NetworkBehaviour
             bul.GetComponent<EnemyBullet>().SetMoveDirection(bulDir);
 
             angle += angleStep;
-
-
         }
     }
 }

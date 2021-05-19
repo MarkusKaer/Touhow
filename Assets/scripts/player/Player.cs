@@ -24,8 +24,6 @@ public class Player : NetworkBehaviour
         nM = nMan.GetComponent<Network>();
     }
 
-
-
     public void TakeDamage(int damage)
     {
         PlayerHealth -= damage;
@@ -36,13 +34,5 @@ public class Player : NetworkBehaviour
         }
 
     }
-
-
-    
-
-
-
-
-
 
 }

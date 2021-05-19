@@ -8,7 +8,6 @@ using Mirror;
 [AddComponentMenu("")]
 public class Network : NetworkManager
 {
-
     public bool EndGame = false;
     public bool WinGame = false;
 
@@ -19,7 +18,6 @@ public class Network : NetworkManager
     Transform start;
 
     public Transform ScreenSpawn;
-
 
     public override void OnServerAddPlayer(NetworkConnection conn)
     {
@@ -38,8 +36,6 @@ public class Network : NetworkManager
             GameObject endScreen = Instantiate(spawnPrefabs.Find(prefab => prefab.name == "Canvas"), ScreenSpawn.position, ScreenSpawn.rotation);
 
             NetworkServer.Spawn(endScreen);
-
-
         }
 
         if (WinGame == true)
@@ -49,20 +45,11 @@ public class Network : NetworkManager
             GameObject endScreen = Instantiate(spawnPrefabs.Find(prefab => prefab.name == "Canvas2"), ScreenSpawn.position, ScreenSpawn.rotation);
 
             NetworkServer.Spawn(endScreen);
-
-
         }
-
-
-
-
     }
 
     public void killNetwork()
     {
         NetworkManager.Shutdown();
     }
-
-
-
 }

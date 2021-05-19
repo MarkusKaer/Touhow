@@ -6,9 +6,6 @@ using Mirror;
 
 public class Enemy : NetworkBehaviour
 {
-
-
-
     [SyncVar]
     public int health;
 
@@ -24,11 +21,7 @@ public class Enemy : NetworkBehaviour
 
         nM = nMan.GetComponent<Network>();
     }
-    
-    
-    
-    
-    
+
     public void TakeDamage (int PlayerDamage)
     {
         health -= PlayerDamage;
@@ -40,15 +33,7 @@ public class Enemy : NetworkBehaviour
 
         if (nM.EndGame == true)
         {
-            health = 100;
+            health = 500;
         }
-
-
     }
-
-
-
-
-
-
 }

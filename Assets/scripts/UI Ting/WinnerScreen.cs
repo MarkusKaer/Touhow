@@ -7,12 +7,9 @@ using Mirror;
 
 public class WinnerScreen : NetworkBehaviour
 {
-
-
     GameObject nMan;
 
     Network nM;
-
 
     public void Start()
     {
@@ -21,15 +18,11 @@ public class WinnerScreen : NetworkBehaviour
         nM = nMan.GetComponent<Network>();
     }
 
-
     public void RestartButton()
     {
-
         nM.killNetwork();
 
         Invoke("Reload", 1);
-
-
     }
 
     void Reload()
@@ -38,12 +31,8 @@ public class WinnerScreen : NetworkBehaviour
 
     }
 
-
     public void ExitButton()
     {
         Application.Quit();
     }
-
-
-
 }
