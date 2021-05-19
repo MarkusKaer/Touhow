@@ -21,7 +21,7 @@ public class FireBullets : NetworkBehaviour
     // I start definerer vi basically vores firerate, s� hvert andet sekund skyder vi en bullet ud
     void Start()
     {
-        InvokeRepeating("Fire", 0f, 2f);
+        InvokeRepeating("Fire", 1f, 2f);
     }
 
     //N�r fjenden skyder

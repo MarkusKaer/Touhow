@@ -18,7 +18,7 @@ public class Enemy : NetworkBehaviour
     
     public void Start()
     {
-        health = 100;
+        health = 500;
         
         nMan = GameObject.FindWithTag("NetworkManager");
 
